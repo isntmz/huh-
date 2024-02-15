@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('mainbg.png');
+    background-size: cover;
+}
+
+
+#menu {
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+.gametitle {
+    top: 4vh;
+    left: 50%;
+    transition: translatex(-5%);
+    font-size: 10vh;
+}
+
+.hidden {
+    opacity: 0;
+
+}
+/* your mom */
+.level {
+    
+}
