@@ -1,26 +1,22 @@
 function gameStart() {
     console.log("Game Started. Good luck, adventurer.")
     window.alert("your mom is wooden frog.")
+    window.location.href = "videogame.html"
 }
 
+window.onload = function() {
+    var audio = document.getElementById('backgroundaudio')
+    audio.play();
+}
+
+  function openTutorial() {
+    console.log("Tutorial opened!");
+    window.location.href = "videogametutorial.html"
+  }
+
+  function openSettings() {
+    console.log("Settings opened!");
+    window.location.href = "videogamesettings.html"
+  }
 
 //measurement variables
-let w = window.innerWidth
-let h = window.innerHeight
-
-function setup() {
-    createCanvas(w,h)
-}
-
-
-//blackscreen; wtf is this
-function fadeout() {
-    fill(black)
-    rect(0, 0, w, h)
-}
-
-
-//
-function draw() {
-    fadeout()
-}

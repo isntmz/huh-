@@ -1,8 +1,12 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('mainbg.png');
-    background-size: cover;
+    /* background reference: https://www.deviantart.com/belamuca/art/Island-gif-535304974 */
+    background-image: url('pixelisland.gif');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-color: aqua;
 }
 
 
@@ -11,10 +15,63 @@ body {
 }
 
 .gametitle {
-    top: 4vh;
+    top: 1vh;
+    align-items: center;
+    text-align: center;
+    font-size: 15vh;
+    width: 100%;
+    color: white;
+    -webkit-text-stroke: 2px black;
+}
+
+.homescreenrule {
+    width: 20%;
+}
+
+.homescreenbuttons {
+    background-color: white;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    border: none;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 8vh;
+    color: white;
+    -webkit-text-stroke: 0.5px black;
+    align-items: center;
+    position: relative;
     left: 50%;
-    transition: translatex(-5%);
-    font-size: 10vh;
+    transform: translatex(-50%);
+}
+
+#tutorialbutton:hover {
+    animation-name: buttonhover;
+    animation-duration: 1s;
+    animation-direction: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    cursor: grab;
+}
+
+#settingsbutton:hover {
+    animation-name: buttonhover;
+    animation-duration: 1s;
+    animation-direction: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    cursor: grab;
+}
+
+@keyframes buttonhover {
+    0% {
+        color: white;
+    }
+    50% {
+        color: pink;
+    }
+    100% {
+        color: white;
+    }   
 }
 
 .hidden {
@@ -24,4 +81,70 @@ body {
 /* your mom */
 .level {
     
+}
+
+#startbutton {
+    
+}
+
+#startbutton:hover {
+    animation-name: starting;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forward;
+    animation-direction: linear;
+}
+
+.expandstartbutton:hover {
+    transform: scale(1, 1);
+    animation-name: expanding;
+    animation-duration: 0.5s;
+    animation-fill-mode: forward;
+    animation-direction: linear;
+    cursor: crosshair;
+}
+
+@keyframes expanding {
+    0% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(2, 2);
+    }
+}
+
+@keyframes starting {
+    0% {
+        opacity: 1;
+    }
+    10% {
+        opacity: 0.9;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    30% {
+        opacity: 0.7;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
 }
