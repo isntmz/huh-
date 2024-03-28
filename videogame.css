@@ -1,12 +1,31 @@
 body {
     margin: 0;
     padding: 0;
+}
+
+#homepage {
     /* background reference: https://www.deviantart.com/belamuca/art/Island-gif-535304974 */
     background-image: url('pixelisland.gif');
     background-size: 100%;
     background-repeat: no-repeat;
     overflow: hidden;
     background-color: aqua;
+}
+
+#startbutton:active {
+    color: black;
+}
+
+#gamescreen {
+    background-image: url('videogamedesertbackground.png');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
+}
+
+#tutorial {
+    width: 100%;
+    height: 100%;
 }
 
 

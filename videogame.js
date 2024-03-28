@@ -1,13 +1,22 @@
 function gameStart() {
-    console.log("Game Started. Good luck, adventurer.")
-    window.alert("your mom is wooden frog.")
+    console.log("Displaying Levels.")
+
+}
+
+function startanimation() {
+    if (document.getElementById('startbutton').style = black) {
+      document.getElementsByClassName('')
+    }
+}
+
+function levelonestart() {
     window.location.href = "videogame.html"
 }
 
-window.onload = function() {
-    var audio = document.getElementById('backgroundaudio')
-    audio.play();
-}
+//window.onload = function() {
+    //var audio = document.getElementById('backgroundaudio')
+    //audio.play();
+//}
 
   function openTutorial() {
     console.log("Tutorial opened!");

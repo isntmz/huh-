@@ -7,9 +7,26 @@ let h = window.innerHeight
 let bx = w / 2
 let by = h / 2
 
+let boxx = w 
+
+let gay
+
+function returnhome() {
+    window.location.href = "videogamehome.html"
+}
+
+function preload() {
+    gay = loadImage("berrybobjones.png")
+    apple = loadImage("apple.png")
+}
+
 function setup() {
     createCanvas(w, h)
     player = new figure()
+}
+
+function goal() {
+    image(apple,bx*1.2,by*0.5,100,100)
 }
 
 function figure() {
@@ -20,14 +37,17 @@ function figure() {
     //function to setup the initial player position
     this.show = function () {
         //determine what it will look like
-        fill('red')
-        circle(this.x, this.y, 50)
+        image(gay,this.x,this.y,50,50)
     }
 }
 
 function draw() {
     clear()
+    w = window.innerWidth
+    h = window.innerHeight
+    createCanvas(w,h)
     player.show()
+    goal()
     let speed = 5
 
     //conditional statement, if the x of the ball goes =0 or <0, the conditional wont run
@@ -37,7 +57,7 @@ function draw() {
         }
     }
     //conditional statement, if the x of the ball goes =0 or <0, the conditional wont run
-    if (player.x <= w) {
+    if (player.x <= w*0.97) {
         if (keyIsDown(RIGHT_ARROW)) {
             player.x += speed
         }
@@ -49,9 +69,13 @@ function draw() {
         }
     }
 
-    if (player.y <= h) {
+    if (player.y <= h*0.81) {
         if (keyIsDown(DOWN_ARROW)) {
             player.y += speed
         }
     }
+}
+
+function box() {
+    rect(boxx,boxy)
 }
