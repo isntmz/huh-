@@ -72,7 +72,7 @@ body {
     cursor: grab;
 }
 
-#settingsbutton:hover {
+#lorebutton:hover {
     animation-name: buttonhover;
     animation-duration: 1s;
     animation-direction: linear;
@@ -96,14 +96,6 @@ body {
 .hidden {
     opacity: 0;
 
-}
-/* your mom */
-.level {
-    
-}
-
-#startbutton {
-    
 }
 
 #startbutton:hover {

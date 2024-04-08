@@ -23,9 +23,9 @@ function levelonestart() {
     window.location.href = "videogametutorial.html"
   }
 
-  function openSettings() {
-    console.log("Settings opened!");
-    window.location.href = "videogamesettings.html"
+  function openLore() {
+    console.log("Lore opened!");
+    window.location.href = "videogamelore.html"
   }
 
 //measurement variables
