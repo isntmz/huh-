@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" id="homepage">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berry Bob Jones' Adventures</title>
+    <title>Document</title>
     <link rel="icon" type="image/x-icon" href="berrybobjones.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,28 +20,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.js"
         integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <audio loop id="backgroundaudio">
-        <source src="backgroundmusic.mp3" type="audio/mpeg">
-    </audio>
+    <style>
+        body {
+            animation: backgroundchange 1s linear forwards infinite;
+        }
+
+        @keyframes backgroundchange {
+            0% {
+                background-image: url('paper.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            50% {
+                background-image: url('paper.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            51% {
+                background-image: url('papertwo.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            100% {
+                background-image: url('papertwo.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Title screen, introduction -->
-
-    <div class="container">
-        <h1 class="gametitle" id="menu">Berry Bob Jones' Adventures</h1>
-        <button onclick="gameStart()" class="homescreenbuttons" id="startbutton">
-            <span class="expandstartbutton">Start</span></button>
-        <br><br>
-        <button onclick="openTutorial()" id="tutorialbutton" class="homescreenbuttons">Tutorial</button>
-        <br>
-        <hr class="homescreenrule">
-        <button onclick="openLore()" id="lorebutton" class="homescreenbuttons">Lore</button>
-    </div>
 
 </body>
-<script>
-
-</script>
 
 </html>

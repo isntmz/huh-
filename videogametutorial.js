@@ -7,11 +7,11 @@ let h = window.innerHeight
 let bx = w / 2
 let by = h / 2
 
-let itemx = bx*1.6
-let itemy = by*0.3
+let itemx = bx * 1.6
+let itemy = by * 0.3
 let tutorialcompletion = false
 
-let boxx = w 
+let boxx = w
 
 let bobjones
 let apple
@@ -35,7 +35,7 @@ function setup() {
 
 //create an image of the apple using the designated properties
 function goal() {
-    image(apple,itemx,itemy,100,100)
+    image(apple, itemx, itemy, 100, 100)
 }
 
 function figure() {
@@ -46,7 +46,7 @@ function figure() {
     //function to setup the initial player position
     this.show = function () {
         //determine what it will look like
-        image(bobjones,this.x,this.y,50,50)
+        image(bobjones, this.x, this.y, 50, 50)
     }
 }
 
@@ -58,11 +58,11 @@ function draw() {
     clear()
     w = window.innerWidth
     h = window.innerHeight
-    createCanvas(w,h)
+    createCanvas(w, h)
     player.show()
     goal()
     //detects whether true; if bob collides with the apple
-    hit = collideRectCircle(player.x,player.y,50,50,itemx+50,itemy+50,100,100)
+    hit = collideRectCircle(player.x, player.y, 50, 50, itemx + 50, itemy + 50, 100, 100)
     let speed = 5
 
     //conditional statement, if the x of the ball goes =0 or <0, the conditional wont run
@@ -72,7 +72,7 @@ function draw() {
         }
     }
     //conditional statement, if the x of the ball goes =0 or <0, the conditional wont run
-    if (player.x <= w*0.97) {
+    if (player.x <= w * 0.97) {
         if (keyIsDown(RIGHT_ARROW)) {
             player.x += speed
         }
@@ -85,7 +85,7 @@ function draw() {
     }
 
     //specific, so it could match my screen lmfaoao
-    if (player.y <= h*0.81) {
+    if (player.y <= h * 0.81) {
         if (keyIsDown(DOWN_ARROW)) {
             player.y += speed
         }
@@ -107,7 +107,7 @@ function draw() {
             document.getElementById('directions').innerText = "tutorial complete!"
             tutorialcompletion = true
             localStorage.getItem('tutorial')
-            localStorage.setItem('tutorial',tutorialcompletion)
+            localStorage.setItem('tutorial', tutorialcompletion)
             print('tutorial! complete')
         }
     }
@@ -117,6 +117,6 @@ function draw() {
             document.getElementById('directions').innerText = 'arrow keys to move'
         }
     }
-    
+
 }
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,40 +8,168 @@
     <link rel="icon" type="image/x-icon" href="berrybobjones.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="videogame.css">
     <script src="videogame.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js" integrity="sha512-uaz5GpnQoE6t5echKlX8P52czvsIGgLPcvlzfvRubLZ1Hp8JemUDnbUiAahbVtPb+jUVrNETuXvAhDDF/N3M4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"
+        integrity="sha512-uaz5GpnQoE6t5echKlX8P52czvsIGgLPcvlzfvRubLZ1Hp8JemUDnbUiAahbVtPb+jUVrNETuXvAhDDF/N3M4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="https://unpkg.com/p5.collide2d"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.js"
+        integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         body {
             overflow: hidden;
             background-image: url('paper.png');
             background-size: cover;
             background-repeat: no-repeat;
+        }   
+        .container{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
         }
 
-        .loreheader {
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-            top: 3%;
-            font-size: 10vh;
-            font-family: "Pixelify Sans", sans-serif;
+        #boxone {
+            height: 50vh;
+            width: 50vw;
+            background-image: url(pixelisland.gif);
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            filter: saturate(0%);
+            display: flex;
+            flex-direction: row;
+            font-family: 'Pixelify Sans', Open Sans;
+            font-size: 7vh;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            -webkit-text-stroke: 0.1vh black;
+        }
 
+        #boxone:hover {
+            animation: fade 0.5s linear forwards;
+        }
+
+        #boxtwo {
+            height: 50vh;
+            width: 50vw;
+            background-image: url(firstlevel.png);
+            display: flex;
+            flex-direction: row;
+            font-family: 'Pixelify Sans', Open Sans;
+            font-size: 7vh;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            -webkit-text-stroke: 0.1vh black;
+            filter: saturate(0%);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #boxtwo:hover {
+            animation: fade 0.5s linear forwards;
+        }
+
+        #boxthree {
+            height: 50vh;
+            width: 50vw;
+            background-image: url(secondlevel.png);
+            display: flex;
+            flex-direction: row;
+            font-family: 'Pixelify Sans', Open Sans;
+            font-size: 7vh;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            -webkit-text-stroke: 0.1vh black;
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: saturate(0%);
+        }
+
+        #boxthree:hover {
+            animation: fade 0.5s linear forwards;
+        }
+
+        #boxfour {
+            height: 50vh;
+            width: 50vw;
+            background-image: url(thirdlevel.png);
+            display: flex;
+            flex-direction: row;
+            font-family: 'Pixelify Sans', Open Sans;
+            font-size: 7vh;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            -webkit-text-stroke: 0.1vh black;
+            filter: saturate(0%);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #boxfour:hover {
+            animation: fade 0.5s linear forwards;
+        }
+
+
+        @keyframes fade {
+            0% {
+                filter: saturate(0%);
+            }
+            100% {
+                filter: saturate(100%);
+            }
+        }
+
+        #homebutton {
+            height: 25vh;
+            width: 25vh;
+            border: 1vh solid black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            align-content: center;
+            text-align: center;
+            font-family: 'Pixelify Sans', Open Sans;
+            font-size: 10vh;
+            -webkit-text-stroke: 0.2vh black;
+            color: white;
+            background-color: white;
+            background-image: url(berrybobjones.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: grab;
         }
     </style>
 </head>
+
 <body>
-    <div class="loreheader" id="menuheader" onclick="returnhome()">Lore</div>
-    <div class="firststory" id="storylist"></div>
-    <div class="secondstory" id="storylist"></div>
-    <div class="thirdstory" id="storylist"></div>
+    <div class="container">
+    <div id="boxone" onclick="viewprologuestory()">Prologue</div>
+    <div id="boxtwo" onclick="viewfirststory()">Story One</div>
+    <div id="boxthree" onclick="viewsecondstory()">Story Two</div>
+    <div id="boxfour" onclick="viewthirdstory()">Story Three</div></div>
+    <div id="homebutton" onclick="returnhome()">Lore</div>
     <script>
         function returnhome() {
             window.location.href = "videogamehome.html"
         }
+        function viewprologuestory() {
+            window.location.href = "prologue.html"
+        }
     </script>
 </body>
+
 </html>
