@@ -7,7 +7,7 @@ What do I write here?
 Berry Bob Jones.
 I love that guy.
 
-You got stranded on an island after your plane fouled a crappy engine!
+You got stranded on an island after your boat was struck by a storm!
 
 You must collect materials to survive and get back home!
 
