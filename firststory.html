@@ -22,7 +22,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         body {
-            animation: backgroundchange 1s linear forwards infinite;
+            animation: backgroundchange 2s linear forwards infinite;
+            overflow: hidden;
         }
 
         @keyframes backgroundchange {
@@ -50,11 +51,57 @@
                 background-repeat: no-repeat;
             }
         }
+
+        #screenshit {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #storyboard {
+            background-image: url("firststoryframeone.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 90vw;
+            height: 90vh;
+            align-items: center;
+            text-align: center;
+            font-size: 5vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Pixelify Sans', Open Sans;
+            position: relative;
+            z-index: 1;
+            -webkit-text-stroke: 0.05vw black;
+            color: white;
+        }
     </style>
 </head>
 
 <body>
+    <div id="screenshit">
+        <div id="storyboard" onclick="storychange()">Bob hasto get up and get things to survive.</div>
+    </div>
 
+    <script>
+        let frame = 0
+        function storychange() {
+            if (frame == 2) {
+                window.location.href = "videogamelore.html"
+            } else if (frame == 1) {
+                document.getElementById("storyboard").style.backgroundImage = 'url("firststoryframethree.png")'
+                document.getElementById("storyboard").innerHTML = "Then, he reached a bridge where he could cross to the forest."
+                frame += 1
+            } else if (frame == 0) {
+                document.getElementById("storyboard").style.backgroundImage = 'url("firststoryframetwo.png")'
+                document.getElementById("storyboard").innerHTML = "And thus, he traversed the long beach the island had."
+
+                frame += 1
+            }
+        }
+    </script>
 </body>
 
 </html>
