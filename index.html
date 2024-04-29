@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" id="homepage">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berry Bob Jones' Adventures</title>
+    <link rel="icon" type="image/x-icon" href="berrybobjones.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="videogame.css">
+    <script src="videogame.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"
+        integrity="sha512-uaz5GpnQoE6t5echKlX8P52czvsIGgLPcvlzfvRubLZ1Hp8JemUDnbUiAahbVtPb+jUVrNETuXvAhDDF/N3M4w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.js"
+        integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <audio loop id="backgroundaudio">
+        <source src="backgroundmusic.mp3" type="audio/mpeg">
+    </audio>
+</head>
+
+<body>
+    <!-- Title screen, introduction -->
+
+    <div class="container">
+        <h1 class="gametitle" id="menu">Berry Bob Jones' Adventures</h1>
+        <button onclick="gameStart()" class="homescreenbuttons" id="startbutton">
+            <span class="expandstartbutton">Start</span></button>
+        <br><br>
+        <button onclick="openTutorial()" id="tutorialbutton" class="homescreenbuttons">Tutorial</button>
+        <br>
+        <hr class="homescreenrule">
+        <button onclick="openLore()" id="lorebutton" class="homescreenbuttons">Lore</button>
+    </div>
+
+</body>
+<script>
+
+</script>
+
+</html>

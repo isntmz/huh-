@@ -18,7 +18,7 @@ let apple
 
 //button to return home
 function returnhome() {
-    window.location.href = "videogamehome.html"
+    window.location.href = "index.html"
 }
 
 //preload two images; bob and the apple
