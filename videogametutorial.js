@@ -25,6 +25,7 @@ function returnhome() {
 function preload() {
     bobjones = loadImage("berrybobjones.png")
     apple = loadImage("apple.png")
+    ping = loadSound("orb.mp3")
 }
 
 function setup() {
@@ -90,7 +91,7 @@ function draw() {
             player.y += speed
         }
     }
-
+    
     //collision detected
     if (hit == true) {
         //give directions
@@ -109,6 +110,7 @@ function draw() {
             localStorage.getItem('tutorial')
             localStorage.setItem('tutorial', tutorialcompletion)
             print('tutorial! complete')
+            ping.play()
         }
     }
     else if (hit == false) {

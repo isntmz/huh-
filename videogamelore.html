@@ -183,6 +183,14 @@
         function viewthirdstory(){
             window.location.href = "thirdstory.html"
         }
+        let moosic
+        function preload() {
+            moosic = loadSound('loremusic.mp3')
+        }
+        function setup() {
+            moosic.play()
+            moosic.loop()
+        }
     </script>
 </body>
 

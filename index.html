@@ -41,8 +41,16 @@
 
 </body>
 <script>
+    let moosic
     function gameStart() {
         window.location.href = "firstlevel.html"
+    }
+    function preload() {
+        moosic = loadSound('backgroundmusic.mp3')
+    }
+    function setup() {
+        moosic.play()
+        moosic.loop()
     }
 </script>
 

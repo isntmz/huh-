@@ -104,6 +104,14 @@
                 frame += 1
             }
         }
+        let moosic
+        function preload() {
+            moosic = loadSound('loremusic.mp3')
+        }
+        function setup() {
+            moosic.play()
+            moosic.loop()
+        }
     </script>
 </body>
 

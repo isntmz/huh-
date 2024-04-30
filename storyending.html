@@ -48,6 +48,10 @@
         var one = localStorage.getItem('level one')
         var two = localStorage.getItem('level two')
         var three = localStorage.getItem('level three')
+        let ding
+        function setup() {
+            ding = loadSound('orb.mp3')
+        }
         if (one == 'true') {
             x += 1
         }
@@ -58,7 +62,8 @@
             x += 1
         }
         function bonk() {
-            document.getElementById("yeet").innerHTML = "You got " + x + " stars!"
+            document.getElementById("yeet").innerHTML = "You got " + x + "/3 stars!"
+            ding.play()
         }
         function hometime() {
             window.location.href = "index.html"
