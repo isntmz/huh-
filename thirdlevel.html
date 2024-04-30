@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,8 +20,145 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.js"
         integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body {
+            background-image: url("thirdlevel.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+
+
+    <script>
+        let player
+
+        // measurement variables
+        let w = window.innerWidth
+        let h = window.innerHeight
+
+        let bx = w / 2
+        let by = h / 2
+
+        let itemx = bx * 0.1
+        let itemy = by * 1.6
+        let levelthreecompletion = false
+
+        let boxx = w
+
+        let bobjones
+        let obj
+
+        //button to return home
+        function returnhome() {
+            window.location.href = "index.html"
+        }
+
+        //preload two images; bob and the apple
+        function preload() {
+            bobjones = loadImage("highlightedbob.png")
+            obj = loadImage("star.png")
+        }
+
+        function setup() {
+            createCanvas(w, h)
+            //uh oh time, bob becomes an interactable object
+            player = new figure()
+        }
+
+        //create an image of the apple using the designated properties
+        function goal() {
+            image(obj, itemx, itemy, 100, 100)
+        }
+
+        function figure() {
+            //starting point of the player
+            this.x = bx * 1.7
+            this.y = by * 1.4
+
+            //function to setup the initial player position
+            this.show = function () {
+                //determine what it will look like
+                image(bobjones, this.x, this.y, 100, 100)
+            }
+        }
+
+        //collision
+        let hit = false
+        let points = 0
+
+        function draw() {
+            clear()
+            w = window.innerWidth
+            h = window.innerHeight
+            createCanvas(w, h)
+            player.show()
+            goal()
+            //detects whether true; if bob collides with the apple
+            hit = collideRectCircle(player.x, player.y, 100, 100, itemx + 50, itemy + 50, 100, 100)
+            let speed = 5
+
+            //conditional statement, if the x of the ball goes =0 or <0, the conditional wont run
+            if (player.x > 0) {
+                if (keyIsDown(LEFT_ARROW)) {
+                    player.x -= speed
+                }
+            }
+            //conditional statement, if the x of the ball goes =0 or <0, the conditional wont run
+            if (player.x <= w * 0.97) {
+                if (keyIsDown(RIGHT_ARROW)) {
+                    player.x += speed
+                }
+            }
+
+            if (player.y > 0) {
+                if (keyIsDown(UP_ARROW)) {
+                    player.y -= speed
+                }
+            }
+
+            //specific, so it could match my screen lmfaoao
+            if (player.y <= h * 0.81) {
+                if (keyIsDown(DOWN_ARROW)) {
+                    player.y += speed
+                }
+            }
+
+            //collision detected
+            if (hit == true) {
+                //give directions
+                print('collision!', hit);
+                //presses spacebar
+                if (keyIsDown(32)) {
+                    //test
+                    print('spacebar working')
+                    //yeet the objective out of existence LMAO
+                    itemx = -100
+                    itemy = -100
+                    //tutorial completion
+                    console.log("level complete!")
+                    levelthreecompletion = true
+                    localStorage.getItem('level three')
+                    localStorage.setItem('level three', true)
+                    print('level three! complete')
+                    window.location.href = "storyending.html"
+                }
+            }
+            else if (hit == false) {
+                print('collision!', hit)
+                if (levelthreecompletion == false) {
+                    console.log("still not complete... the player is slow...")
+                }
+            }
+
+        }
+
+
+    </script>
 </body>
+
 </html>

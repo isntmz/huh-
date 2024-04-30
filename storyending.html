@@ -19,8 +19,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.js"
         integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+            body {
+                background-image: url("storyending.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                overflow: hidden;
+                background-color: blue;
+            }
+            div {
+               font-family: 'Pixelify Sans', Open Sans; 
+               font-size: 10vh;
+               text-align: center;
+               align-items: center;
+               width: 100vw;
+               height: 10vh;
+               color: white;
+               -webkit-text-stroke: 2px black;
+            }
+        </style>
 </head>
-<body>
-    
+<body onclick="bonk()">
+    <div onclick="bonk()">The End.</div>
+    <div id="yeet" onclick="hometime()"></div>
+    <script>
+        let x = 0
+        let clicks = 0
+        var one = localStorage.getItem('level one')
+        var two = localStorage.getItem('level two')
+        var three = localStorage.getItem('level three')
+        if (one == 'true') {
+            x += 1
+        }
+        if (two == 'true') {
+            x += 1
+        }
+        if (three == 'true') {
+            x += 1
+        }
+        function bonk() {
+            document.getElementById("yeet").innerHTML = "You got " + x + " stars!"
+        }
+        function hometime() {
+            window.location.href = "index.html"
+        }
+    </script>
 </body>
 </html>
